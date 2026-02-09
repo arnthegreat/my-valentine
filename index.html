@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Will you be my valentine?</title>
+	<style>
+		:root{--bg1:#ff9a9e;--bg2:#fad0c4;--accent:#ff6073}
+		html,body{height:100%;margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+		body{display:flex;align-items:center;justify-content:center;background:linear-gradient(120deg,var(--bg1),var(--bg2));}
+		.card{width:min(720px,92vw);background:rgba(255,255,255,0.08);backdrop-filter:blur(6px);border-radius:20px;padding:40px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.15)}
+		h1{margin:0 0 18px;font-size:clamp(1.6rem,3.5vw,2.8rem);color:#fff;text-shadow:0 2px 8px rgba(0,0,0,0.25)}
+		p.lead{color:rgba(255,255,255,0.9);margin:0 0 28px;font-size:1.05rem}
+		.buttons{display:flex;gap:18px;justify-content:center;align-items:center}
+		button.btn{cursor:pointer;border:0;padding:18px 30px;font-size:1.05rem;border-radius:999px;background:#fff;color:var(--accent);box-shadow:0 8px 18px rgba(0,0,0,0.15);transition:transform 220ms ease, box-shadow 220ms ease}
+		button.btn:active{transform:translateY(2px)}
+		#yesBtn{min-width:160px;min-height:64px;font-weight:700}
+		#noBtn{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6)}
+		/* Full-cover YES state */
+		.full-cover{position:fixed;inset:0;width:100vw;height:100vh;border-radius:0;margin:0;display:flex;align-items:center;justify-content:center;font-size:12vw;background:var(--accent);color:#fff;z-index:9999;box-shadow:none}
+		/* celebration overlay */
+		.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(0,0,0,0.15),rgba(0,0,0,0.35));z-index:10000}
+		.message{color:#fff;font-size:clamp(2rem,6vw,4rem);text-align:center}
+		/* floating hearts */
+		.heart{position:absolute;width:22px;height:22px;transform:rotate(-45deg);background:transparent}
+		.heart:before,.heart:after{content:'';position:absolute;width:22px;height:22px;background:rgba(255,255,255,0.9);border-radius:50%}
+		.heart:before{top:-11px}
+		.heart:after{left:11px}
+		@keyframes floatUp{0%{transform:translateY(0) scale(0.8);opacity:1}100%{transform:translateY(-320px) scale(1.2);opacity:0}}
+	</style>
+</head>
+<body>
+	<div class="card" role="main">
+		<h1>Will you be my valentine?</h1>
+		<p class="lead">I made this just for you baby ko. Pick an answer—choose wisely 💌</p>
+		<div class="buttons">
+			<button id="yesBtn" class="btn" aria-label="Yes">Yes</button>
+			<button id="noBtn" class="btn" aria-label="No" title="Try me">No</button>
+		</div>
+	</div>
+
+	<script>
+		const yes = document.getElementById('yesBtn');
+		const no = document.getElementById('noBtn');
+		let scale = 1;
+		let disabled = false;
+
+		no.addEventListener('click', () => {
+			if (disabled) return;
+			// grow the yes button
+			scale *= 1.45;
+			yes.style.transition = 'transform 300ms cubic-bezier(.2,.9,.3,1)';
+			yes.style.transform = `scale(${scale})`;
+			// after transform finishes, check if it covers viewport
+			requestAnimationFrame(() => setTimeout(checkCover, 320));
+		});
+
+		function checkCover(){
+			const r = yes.getBoundingClientRect();
+			if (r.width >= window.innerWidth && r.height >= window.innerHeight) {
+				makeFullCover();
+			}
+		}
+
+		function makeFullCover(){
+			disabled = true;
+			yes.classList.add('full-cover');
+			yes.style.transform = 'none';
+			yes.textContent = 'YES ❤️';
+			yes.style.fontWeight = '900';
+			// make the no button disappear
+			no.style.display = 'none';
+			// add celebration overlay
+			showCelebration();
+		}
+
+		yes.addEventListener('click', () => {
+			if (yes.classList.contains('full-cover')) return; // already covered
+			// quick little celebration even if they click Yes early
+			makeFullCover();
+		});
+
+		function showCelebration(){
+			const overlay = document.createElement('div');
+			overlay.className = 'overlay';
+			overlay.innerHTML = `<div class="message">She said YES! 💖</div>`;
+			document.body.appendChild(overlay);
+			// generate floating hearts
+			for (let i=0;i<18;i++){
+				const h = document.createElement('div');
+				h.className='heart';
+				const left = Math.random()*90 + '%';
+				h.style.left = left;
+				h.style.bottom = '10px';
+				h.style.width = `${10+Math.random()*26}px`;
+				h.style.height = h.style.width;
+				h.style.opacity = 1;
+				h.style.background = 'transparent';
+				h.style.setProperty('--d', `${2 + Math.random()*2}s`);
+				h.style.animation = `floatUp ${3 + Math.random()*2}s ease-in forwards`;
+				h.style.transform = 'rotate(-45deg)';
+				// color the halves
+				h.style.setProperty('background','transparent');
+				h.querySelectorAll?.work;
+				overlay.appendChild(h);
+			}
+			// remove overlay after a while
+			setTimeout(()=>{
+				overlay.style.transition='opacity 800ms';overlay.style.opacity='0';
+				setTimeout(()=>overlay.remove(),900);
+			},2800);
+		}
+
+		// make buttons keyboard accessible (Enter/Space)
+		[yes,no].forEach(btn=>btn.addEventListener('keyup', e=>{ if(e.key==='Enter' || e.key===' ') btn.click(); }));
+	</script>
+</body>
+</html>
