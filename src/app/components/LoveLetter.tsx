@@ -60,7 +60,7 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
             </p>
 
             <p className="text-lg text-center mt-8 text-red-500 font-serif italic">
-              You make my heart whole. ❤️
+              You make my heart whole and complete baby ko! ❤️
             </p>
           </motion.div>
 

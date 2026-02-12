@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FloatingHearts } from './components/FloatingHearts';
 import { EnvelopeAnimation } from './components/EnvelopeAnimation';
@@ -11,6 +11,7 @@ import { LoveCoupons } from './components/LoveCoupons';
 import { ClosingLetter } from './components/ClosingLetter';
 import { GrandFinale } from './components/GrandFinale';
 import { Heart, Music, VolumeX } from 'lucide-react';
+import backgroundMusic from '/music/bestpart.mp3';
 
 type Stage = 'envelope' | 'letter' | 'question' | 'gift' | 'gallery' | 'reasons' | 'coupons' | 'closing' | 'finale';
 
@@ -18,12 +19,34 @@ export default function App() {
   const [stage, setStage] = useState<Stage>('envelope');
   const [envelopeOpen, setEnvelopeOpen] = useState(false);
   const [musicPlaying, setMusicPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Initialize audio
+    audioRef.current = new Audio(backgroundMusic);
+    audioRef.current.loop = true;
+    // Attempt to play immediately on load
+    audioRef.current.play().then(() => {
+      setMusicPlaying(true);
+    }).catch(e => console.log("Autoplay blocked by browser, waiting for interaction", e));
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+      }
+    };
+  }, []);
 
   // Customize these values
   const girlfriendName = 'Nicole'; // Change this to her actual name
   const relationshipStartDate = new Date('2023-01-14'); // Change to your actual start date
 
   const handleEnvelopeClick = () => {
+    // Fallback: Ensure music plays on the first user interaction
+    if (audioRef.current && !musicPlaying) {
+      audioRef.current.play().then(() => setMusicPlaying(true)).catch(e => console.error(e));
+    }
+
     if (!envelopeOpen) {
       setEnvelopeOpen(true);
       setTimeout(() => {
@@ -61,14 +84,14 @@ export default function App() {
   };
 
   const toggleMusic = () => {
-    setMusicPlaying(!musicPlaying);
-    // Note: Add your music URL here
-    // const audio = new Audio('your-music-url.mp3');
-    // if (!musicPlaying) {
-    //   audio.play();
-    // } else {
-    //   audio.pause();
-    // }
+    if (audioRef.current) {
+      if (musicPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch((e) => console.error("Audio play failed:", e));
+      }
+      setMusicPlaying(!musicPlaying);
+    }
   };
 
   return (
