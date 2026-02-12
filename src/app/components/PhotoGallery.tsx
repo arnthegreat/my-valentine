@@ -34,7 +34,7 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
   const photos: Photo[] = (photoUrls.length > 0 ? photoUrls : Array.from({ length: 57 }, (_, i) => `/photos/${i + 1}.jpg`)).map((url, i) => {
     const captions = [
       "You are my everything 💖",
-      "My first Bonchon ate with you (I was still a bit shy hihi) ✨",
+      "Our first Bonchon together 🥰 (I was still a bit shy hihi) ✨",
       "Our 2nd movie together(medyo close na tayo, di nako nahiya magpapic hehe) 😊",
       "Hinding hindi magsasawang pagsilbihan ka araw araw, hatid sundo man as long as I'm near and here with you in PH 😊",
       "Makulit lang ako pero love na love ko ikaw baby ko! And never ko sisirain tiwala mo at hinding hindi kita iiwan! 😘",
@@ -108,18 +108,6 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
                   alt={photos[currentIndex].caption}
                   className="w-full h-full object-cover"
                 />
-                
-                {/* Gradient overlay for caption */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                  <motion.p
-                    className="text-white text-xl md:text-2xl text-center font-serif"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    {photos[currentIndex].caption}
-                  </motion.p>
-                </div>
               </motion.div>
             </AnimatePresence>
 
@@ -139,6 +127,22 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
             >
               <ChevronRight className="w-6 h-6 text-gray-800" />
             </button>
+          </div>
+
+          {/* Caption Below Image */}
+          <div className="p-6 bg-white min-h-[100px] flex items-center justify-center border-b border-gray-100">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={currentIndex}
+                className="text-gray-800 text-xl md:text-2xl text-center font-serif"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
+              >
+                {photos[currentIndex].caption}
+              </motion.p>
+            </AnimatePresence>
           </div>
 
           {/* Photo Indicators */}

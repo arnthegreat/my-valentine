@@ -29,8 +29,8 @@ export function LoveCoupons({ onContinue }: LoveCouponsProps) {
     },
     {
       id: 2,
-      title: "Breakfast in Bed",
-      description: "I'll make you breakfast in bed on any day you choose",
+      title: "Nails Extension",
+      description: "A full nails extension session at your desired salon",
       icon: Coffee,
       color: "from-orange-400 to-red-500",
       redeemed: false,
