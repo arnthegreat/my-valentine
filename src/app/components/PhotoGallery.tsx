@@ -16,29 +16,55 @@ interface PhotoGalleryProps {
 export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Sample photos - these can be replaced with actual photos
-  const photos: Photo[] = [
-    {
-      url: 'https://images.unsplash.com/photo-1643123928085-b93ff675ec79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      caption: 'Every moment with you is magical ✨',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1582845715481-a810047ab56a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      caption: 'Together we create beautiful memories 🌅',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1758524053906-d1f9148c2b11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      caption: 'Your smile lights up my world 😊',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1760669345703-930cd212b219?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      caption: 'Every date with you is perfect 🥂',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1625751989974-e3e28aac9594?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-      caption: 'Adventure is better with you by my side 🏖️',
-    },
-  ];
+  // Automatically import all photos from src/assets/photos
+  const photoImports = import.meta.glob('/photos/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG}', {
+    eager: true,
+    import: 'default',
+  });
+
+  const photoUrls = Object.keys(photoImports)
+    .sort((a, b) => {
+      const nameA = a.split('/').pop() || '';
+      const nameB = b.split('/').pop() || '';
+      return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+    })
+    .map((key) => photoImports[key] as string);
+
+  // Use imported photos, or fallback to placeholders if none found
+  const photos: Photo[] = (photoUrls.length > 0 ? photoUrls : Array.from({ length: 57 }, (_, i) => `/photos/${i + 1}.jpg`)).map((url, i) => {
+    const captions = [
+      "You are my everything 💖",
+      "My first Bonchon ate with you (I was still a bit shy hihi) ✨",
+      "Our 2nd movie together(medyo close na tayo, di nako nahiya magpapic hehe) 😊",
+      "Hinding hindi magsasawang pagsilbihan ka araw araw, hatid sundo man as long as I'm near and here with you in PH 😊",
+      "Makulit lang ako pero love na love ko ikaw baby ko! And never ko sisirain tiwala mo at hinding hindi kita iiwan! 😘",
+      "🫡🫡🫡 hehehe 😘",
+      "Eyyy! Thesis DEFENDED!! 😍",
+      "Thank you for always taking care of me and making me feel loved every single day! I promise to always do the same for you baby ko! 💕",
+      "Always my pretty and cute baby! 😍",
+      "Every moment with you is a treasure, and I can't wait to create more beautiful memories together with you baby! 💖",
+      "You are the best thing that ever happened to me, and I am so grateful to have you in my life! I love you so much baby ko! 💕",
+      "I promise to always be there for you, through thick and thin, and to love you unconditionally for the rest of our lives! 💖",
+      "You are my sunshine on a cloudy day, and I can't imagine my life without you in it! I love you so much baby ko! ☀️💕",
+      "Two Kokeys in a photo! Hihi 😘",
+      "I will always be your sweet, caring, loving, understanding, baby boy hihihi, I love youu!😘",
+      "I may sometimes be annoying and makulit, but please know that it's all because I love you so much and want to make you happy, baby ko! Sayo lang ako ganito at magiging ganito for the rest of our lives 💕",
+      "I may not be perfect, but I promise to always strive to be the best partner I can be for you, baby ko! I love you more than words can express! 💖",
+      "Soooo pretty kahit nakapambahay and walang make up! Literally the prettiest, the most gorgeous and beautiful woman in the world to me! 😍",
+      "Thank you for giving all your heart to me and trusting me to take care of it baby ko! I promise to cherish and treasure it always! 💕",
+      "Tulad nga ng sinasabi nila na, Every great man has a woman behind him to support him in everything, and I can proudly say that I am so lucky to have the most amazing, beautiful, and lovingg woman in the world by my side! I love you so much baby ko! 💖",
+      "One Kokey kissing his cute   baby Kokey! Hihi 😘",
+      "I will never take you for granted, and I will always appreciate and love you for the amazing person that you are, baby ko! You deserve all the love and happiness in the world, and I promise to do everything in my power to give that to you! 💕",
+      "Every time I see you, my heart skips a beat, and I fall in love with you all over again! You are my forever Nicole Boroc (baby kooo!!) 💖",
+      "I am so lucky na nakilala ko kaagad ang babaeng gusto ko pakasalan at makasama habang buhay this early. #CollegeSweetheart 😍",
+      "I will never get used to how beautiful you are especially when you smile and when you're happy, baby ko! You light up my world and make everything better just by being in it! I love you so much! 💕",
+
+    ];
+    return {
+      url,
+      caption: captions[i % captions.length],
+    };
+  });
 
   const nextPhoto = () => {
     setCurrentIndex((prev) => (prev + 1) % photos.length);
