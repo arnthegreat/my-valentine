@@ -20,7 +20,7 @@ export default function App() {
   const [musicPlaying, setMusicPlaying] = useState(false);
 
   // Customize these values
-  const girlfriendName = 'Beautiful'; // Change this to her actual name
+  const girlfriendName = 'Nicole'; // Change this to her actual name
   const relationshipStartDate = new Date('2023-01-14'); // Change to your actual start date
 
   const handleEnvelopeClick = () => {

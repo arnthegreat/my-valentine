@@ -48,7 +48,7 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
             transition={{ delay: 0.6, duration: 1 }}
           >
             <p className="text-lg">
-              From the moment I met you, my life has been filled with more joy, laughter, and love than I ever thought possible. You light up every room you walk into, and you've certainly illuminated my entire world.
+              From the moment I met you, my life has been filled with more joy, laughter, and love than I ever thought possible. You light up every room you walk into, and you've certainly illuminated my entire world baby ko!
             </p>
 
             <p className="text-lg">
@@ -71,7 +71,7 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
             transition={{ delay: 1, duration: 1 }}
           >
             <p>Forever yours,</p>
-            <p className="text-red-500 mt-1">Your Valentine</p>
+            <p className="text-red-500 mt-1">Your Baby Aaron/Ron/Jayson/Gnaru</p>
           </motion.div>
 
           <motion.div
