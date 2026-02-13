@@ -150,7 +150,7 @@ export function GrandFinale({ girlfriendName = 'Beautiful' }: GrandFinaleProps) 
                   repeat: Infinity,
                 }}
               >
-                I love you more than words can say ❤️
+                I love you more than words can say baby! ❤️
               </motion.div>
 
               <div className="flex flex-wrap justify-center gap-4 text-4xl">
