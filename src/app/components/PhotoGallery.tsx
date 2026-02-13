@@ -58,6 +58,8 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
       "Every time I see you, my heart skips a beat, and I fall in love with you all over again! You are my forever Nicole Boroc (baby kooo!!) 💖",
       "I am so lucky na nakilala ko kaagad ang babaeng gusto ko pakasalan at makasama habang buhay this early. #CollegeSweetheart 😍",
       "I will never get used to how beautiful you are especially when you smile and when you're happy, baby ko! You light up my world and make everything better just by being in it! I love you so much! 💕",
+      "Every picture an picture and every moment of/with you is a precious memory that I will cherish forever babyy! 💖",
+      "Spending time with you will always be the best part of my day! I can't wait for the day to come na magkasama na tayo palagi and I can't wait to spend the rest of my life with you babyy! 💕",
 
     ];
     return {
@@ -114,18 +116,18 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
             {/* Navigation Buttons */}
             <button
               onClick={prevPhoto}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all hover:scale-110"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/50 md:bg-white/80 hover:bg-white rounded-full p-2 md:p-3 shadow-lg transition-all hover:scale-110"
               aria-label="Previous photo"
             >
-              <ChevronLeft className="w-6 h-6 text-gray-800" />
+              <ChevronLeft className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />
             </button>
 
             <button
               onClick={nextPhoto}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-3 shadow-lg transition-all hover:scale-110"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/50 md:bg-white/80 hover:bg-white rounded-full p-2 md:p-3 shadow-lg transition-all hover:scale-110"
               aria-label="Next photo"
             >
-              <ChevronRight className="w-6 h-6 text-gray-800" />
+              <ChevronRight className="w-4 h-4 md:w-6 md:h-6 text-gray-800" />
             </button>
           </div>
 
