@@ -116,15 +116,15 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen h-screen p-0 m-0 bg-gradient-to-br from-pink-100 via-red-50 to-pink-100 overflow-hidden">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-pink-100 via-red-50 to-pink-100">
       <motion.div
-        className="max-w-4xl w-full h-[95vh] flex flex-col justify-center items-center"
+        className="max-w-4xl w-full"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
         <motion.h2
-          className="text-2xl md:text-4xl text-center mb-4 text-red-600 font-serif font-bold tracking-wide drop-shadow-sm"
+          className="text-3xl md:text-5xl text-center mb-8 text-red-600 font-serif font-bold tracking-wide drop-shadow-sm"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
@@ -132,9 +132,9 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
           Our Beautiful Memories Together 💕
         </motion.h2>
 
-        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-white flex flex-col w-full max-w-2xl h-[60vh] min-h-0">
+        <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden border-4 border-white">
           {/* Photo Display */}
-          <div className="relative flex-1 min-h-0 aspect-[4/3] bg-gray-100 flex items-center justify-center">
+          <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -171,16 +171,15 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
           </div>
 
           {/* Caption Below Image */}
-          <div className="p-3 bg-white flex items-center justify-center border-b border-gray-100 min-h-0 h-[60px] max-h-[80px]">
+          <div className="p-6 bg-white min-h-[120px] flex items-center justify-center border-b border-gray-100">
             <AnimatePresence mode="wait">
               <motion.p
                 key={currentIndex}
-                className="text-gray-800 text-base md:text-lg text-center font-serif italic leading-relaxed truncate"
+                className="text-gray-800 text-xl md:text-2xl text-center font-serif italic leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3 }}
-                style={{ maxWidth: '100%' }}
               >
                 {photos[currentIndex].caption}
               </motion.p>
@@ -188,14 +187,14 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
           </div>
 
           {/* Photo Indicators */}
-          <div className="flex justify-center gap-2 p-2 bg-white">
+          <div className="flex justify-center gap-2 p-4 bg-white">
             {photos.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-3 h-3 rounded-full transition-all ${
                   index === currentIndex
-                    ? 'bg-red-500 w-6'
+                    ? 'bg-red-500 w-8'
                     : 'bg-gray-300 hover:bg-gray-400'
                 }`}
                 aria-label={`Go to photo ${index + 1}`}
@@ -205,17 +204,17 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
         </div>
 
         <motion.div
-          className="text-center mt-4"
+          className="text-center mt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          <p className="text-gray-700 mb-2 text-base font-medium">
+          <p className="text-gray-700 mb-4 text-lg font-medium">
             {currentIndex + 1} of {photos.length}
           </p>
           <Button
             onClick={onContinue}
-            className="bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-6 py-4 rounded-full text-base shadow-lg"
+            className="bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-8 py-6 rounded-full text-lg shadow-lg"
           >
             See More Love <Heart className="w-5 h-5 ml-2" fill="currentColor" />
           </Button>
