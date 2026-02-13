@@ -20,12 +20,12 @@ export function ReasonsILoveYou({ onContinue }: ReasonsILoveYouProps) {
     },
     {
       number: 2,
-      reason: "The way you laugh at my silly jokes",
+      reason: "The way you laugh at my silly jokes and punch me when I say something cheesy",
       emoji: "😂"
     },
     {
       number: 3,
-      reason: "How you make every day an adventure",
+      reason: "How you make my every day special just by being in it",
       emoji: "🌟"
     },
     {
@@ -40,12 +40,12 @@ export function ReasonsILoveYou({ onContinue }: ReasonsILoveYouProps) {
     },
     {
       number: 6,
-      reason: "How you inspire me to be better",
+      reason: "How you inspire me to be better every single day",
       emoji: "✨"
     },
     {
       number: 7,
-      reason: "Your gorgeous eyes that I get lost in",
+      reason: "Your gorgeous brown eyes that I get lost in",
       emoji: "👀"
     },
     {
@@ -55,12 +55,12 @@ export function ReasonsILoveYou({ onContinue }: ReasonsILoveYouProps) {
     },
     {
       number: 9,
-      reason: "How you make ordinary moments magical",
+      reason: "How you make ordinary moments magical an unforgettable",
       emoji: "🎭"
     },
     {
       number: 10,
-      reason: "Simply everything about you!",
+      reason: "SIMPLY EVERYTHING ABOUT YOU BABY KO!",
       emoji: "💝"
     },
   ];

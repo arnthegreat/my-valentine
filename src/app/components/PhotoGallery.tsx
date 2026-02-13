@@ -31,7 +31,7 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
     .map((key) => photoImports[key] as string);
 
   // Use imported photos, or fallback to placeholders if none found
-  const photos: Photo[] = (photoUrls.length > 0 ? photoUrls : Array.from({ length: 57 }, (_, i) => `/photos/${i + 1}.jpg`)).map((url, i) => {
+  const photos: Photo[] = (photoUrls.length > 0 ? photoUrls : Array.from({ length: 63 }, (_, i) => `/photos/${i + 1}.jpg`)).map((url, i) => {
     const captions = [
       "You are my everything 💖",
       "Our first Bonchon together 🥰 (I was still a bit shy hihi) ✨",
@@ -60,6 +60,45 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
       "I will never get used to how beautiful you are especially when you smile and when you're happy, baby ko! You light up my world and make everything better just by being in it! I love you so much! 💕",
       "Every picture an picture and every moment of/with you is a precious memory that I will cherish forever babyy! 💖",
       "Spending time with you will always be the best part of my day! I can't wait for the day to come na magkasama na tayo palagi and I can't wait to spend the rest of my life with you babyy! 💕",
+      "I am soooo happy that I got to spend my New Year with you baby ko! And I can't wait to spend the rest of my New Years with you for the rest of my life 💖 (may 2 stars ako kasi very good ako hihihi🥰)",
+      "You will always be the most beautiful woman than you'll ever realize to me baby!💖",
+      "Our first church with your family 🥰",
+      "Hi kids! This is Mom and Dad! HAHAHAHA🥰",
+      "As long as I'm alive you will be protected, cared, loved, and cherished baby ko! 😘",
+      "I can’t help smiling when I think of you all the time ",
+      "Simple dates with you will always be one of my favorites 🥰",
+      "7-11 detour with you before I drop you off at your house will be also one of my favorite memories with you baby ko! ☺️",
+      "Always know na I will always choose you over anything forever baby kooo, I love you soo muchh!💚💖",
+      "My first time ever to receive flowers my whole🥰 It is from someone I wanna marry and be with for the rest of my life💍",
+      "How lucky I am to have found someone that makes distance soooo worth it🥰",
+      "I love seeing you, hearing your voice and spending time with you even if it's just in a screen or a call as much I love being with you in person. I can't wait for the day to come that we can be together all the time baby ko! 💖",
+      "Seing you smile, laugh andd happy will always be my favorite view baby ko! I love you so sooo muchh! 💕",
+      "I love how clingy and touchy you can be with me sometimes baby🥰, it makes my heart melt.",
+      "Our first samgyup together!🥰 #ThesisDefended",
+      "Kissing you will always be my favorite thing to do when I'm with you (sa cheeks man or sa lips or sa kahit saang parte ng katawan) and I will never ever have enough of it forever baby koo! hehehe 😘",
+      "With my beautiful (soon to be) wife and our baby boy HAHAHAHA🥰",
+      "Cuddling with you will always be my favorite🥰, It makes me feel like I'm in heaeven hehehe (cuddling a heaven sent Angel hehe)",
+      "I was like 😍😍😍 when I saw you with bangs for the first time, parang may artista akong girlfriend HAHAHAHA",
+      "You will always be my favorite person no matter what baby ☺️.",
+      "How cute can you be baby ko ha? I lovee youuuu! 😘😘",
+      "One of my best memories! Mario Kart with youu hehehe 🥰",
+      "Thank you for all the efforts for making my first birthday with you so soo soooo special an memorable baby! Just by being with you is more than enough for me na eh🥹. I can't wait to celebrate all my birhtdays with you for the rest of our lives! 💖",
+      "Arcades date with youu >>>> 🥰",
+      "Magic ticket pro player ba naman kasama ko HAHAHAHAHAHA paldo🥰",
+      "Akala mo maangas noh, di nila alam soft boy and iyakin ako pagdating sayo HAHAHAHA kasi love na love ko ikaw😘",
+      "You will always be the most beautiful, gorgeous, cute and the prettiest woman to me no matter what baby! Kahit balibaliktarin pa ang mundo ikaw lang ang maganda sa mga mata ko wala nang iba at hinding hindi magbabago yan☺️😍",
+      "Balang araw magkakaron din tayo ng sarili nating PC setup sa sarili nating kwarto at bahay baby ko, promise yan! I love you so much! 💖 #MyForeverDuoInGameAndIRL",
+      "You always turn ordinary moments into something magical just by being there with me baby koo 🥰" ,
+      "My sleepy head/sleeping beauty! You're so beautiful and so cute kahit tulog☺️. Pag katabi kita matulog, I would stare at you for hours and just admire how lucky I am to have you in my life. I love you so much! 💖",
+      "I will always and forever be your beast boy ☺️",
+      "Lumipas man ang panahon mapa-10, 20, 30, 40, 50, 60 years pa yan never ako magsasawang iparamdam tayo at sabihin sayo na mahal na mahal kita at hinding hindi kita iiwan baby ko! I love you so much from the deepest bottom of my heart! 💕",
+      "Travel ready na with youuu babyyy!✈️✈️✈️😘😍",
+      "How lucky I am to be with someone that makes saying GOODBYE soooo hard. But makes it sooo worth it every single time because at the end of the day, we're going to see each other again no matter what. 🥹💖",
+      "I can't wait for the day to come to have our mini versions of you and me baby koo! I'm sure you will be the best Mom ever, I can see it ☺️🥰",
+      "I promise you this baby ko. I will always be there for you, through thick and thin, in good times and bad, and I will love you unconditionally for the rest of our lives. And one day I will marry you💍, have kids with you, grow old with you, and spend the rest of my life loving you with all my heart and soul! I love you so much baby ko! 💖",
+   
+      
+      
 
     ];
     return {
