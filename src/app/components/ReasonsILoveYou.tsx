@@ -104,7 +104,7 @@ export function ReasonsILoveYou({ onContinue }: ReasonsILoveYouProps) {
           >
             <Heart className="w-16 h-16 text-red-500 mx-auto" fill="currentColor" />
           </motion.div>
-          <h2 className="text-3xl md:text-5xl mb-4 text-red-500 font-serif">
+          <h2 className="text-3xl md:text-5xl mb-4 text-red-600 font-serif font-bold tracking-wide">
             Reasons Why I Love You
           </h2>
           <p className="text-xl text-gray-600">
@@ -154,7 +154,7 @@ export function ReasonsILoveYou({ onContinue }: ReasonsILoveYouProps) {
                 >
                   <div className="text-center">
                     <div className="text-4xl mb-2">{item.emoji}</div>
-                    <p className="text-gray-700 text-sm leading-tight">{item.reason}</p>
+                    <p className="text-gray-800 text-sm leading-snug font-serif font-medium">{item.reason}</p>
                   </div>
                 </div>
               </motion.div>

@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   // Customize these values
-  const girlfriendName = 'Nicole baby ko'; // Change this to her actual name
+  const girlfriendName = 'Nicole'; // Change this to her actual name
   const relationshipStartDate = new Date('2023-01-14'); // Change to your actual start date
 
   const handleEnvelopeClick = () => {

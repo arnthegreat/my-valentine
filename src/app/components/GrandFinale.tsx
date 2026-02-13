@@ -115,7 +115,7 @@ export function GrandFinale({ girlfriendName = 'Beautiful' }: GrandFinaleProps) 
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          Happy Valentine's Day, {girlfriendName}! 💝
+          Happy Valentine's Day, Baby kooo! 💝
         </motion.h1>
 
         {showMessage && (

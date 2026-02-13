@@ -11,7 +11,7 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div
-        className="max-w-3xl w-full bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden"
+        className="max-w-3xl w-full bg-[#fff0f3]/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden border border-white/50"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -54,14 +54,14 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
             >
               <Heart className="w-16 h-16 text-red-500" fill="currentColor" />
             </motion.div>
-            <h2 className="text-3xl md:text-4xl text-red-500 font-serif">
+            <h2 className="text-3xl md:text-4xl text-red-600 font-serif font-bold tracking-wide">
               To My Dearest {girlfriendName},
             </h2>
           </motion.div>
 
           {/* Letter Content */}
           <motion.div
-            className="space-y-6 text-gray-700 leading-relaxed text-lg"
+            className="space-y-6 text-gray-800 leading-loose text-lg font-serif"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1 }}
@@ -86,7 +86,7 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
               I want you to know that you are appreciated, cherished, and loved beyond measure. Every smile you give me is a gift. Every moment we share together is a treasure I hold close to my heart. You make me want to be better, do better, and give you the world you deserve.
             </p>
 
-            <p className="text-xl text-red-500 font-serif italic text-center pt-4">
+            <p className="text-xl text-red-600 font-serif italic text-center pt-4 font-medium">
               I don't just love you for who you are.
               <br />
               I love you for who I become when I'm with you.
@@ -96,7 +96,7 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
               As we continue this beautiful journey together, I promise to always support you, encourage you, and stand by your side through everything. You are my today and all of my tomorrows. My heart is yours, now and forever.
             </p>
 
-            <p className="text-center pt-4 pb-2">
+            <p className="text-center pt-4 pb-2 italic text-gray-600">
               Thank you for being you. Thank you for choosing me.
               <br />
               Thank you for making my life infinitely better.
@@ -105,13 +105,13 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
 
           {/* Signature */}
           <motion.div
-            className="mt-10 text-right text-gray-600 font-serif"
+            className="mt-10 text-right text-gray-700 font-serif"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 1 }}
           >
             <p className="text-lg">With all my love,</p>
-            <p className="text-2xl text-red-500 mt-2">Forever Yours 💕</p>
+            <p className="text-2xl text-red-500 mt-2">Aaron 💕</p>
           </motion.div>
 
           {/* Continue Button */}

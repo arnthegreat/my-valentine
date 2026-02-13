@@ -11,7 +11,7 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
   return (
     <div className="flex items-center justify-center min-h-screen p-4">
       <motion.div
-        className="max-w-2xl w-full bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden"
+        className="max-w-2xl w-full bg-[#fff0f3]/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-12 relative overflow-hidden border border-white/50"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -36,13 +36,13 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
           >
-            <h2 className="text-3xl md:text-4xl text-center mb-8 text-red-500 font-serif">
+            <h2 className="text-3xl md:text-4xl text-center mb-8 text-red-600 font-serif font-bold tracking-wide">
               To {girlfriendName},
             </h2>
           </motion.div>
 
           <motion.div
-            className="space-y-4 text-gray-700 leading-relaxed"
+            className="space-y-6 text-gray-800 leading-loose font-serif text-lg"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 1 }}
@@ -59,13 +59,13 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
               I fall more in love with you with each passing day. Your kindness, your warmth, your beautiful soul—everything about you amazes me. You are my best friend, my confidant, my everything.
             </p>
 
-            <p className="text-lg text-center mt-8 text-red-500 font-serif italic">
+            <p className="text-xl text-center mt-8 text-red-600 font-serif italic font-medium">
               You make my heart whole and complete baby ko! ❤️
             </p>
           </motion.div>
 
           <motion.div
-            className="mt-8 text-right text-gray-600 font-serif italic"
+            className="mt-10 text-right text-gray-700 font-serif italic"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
