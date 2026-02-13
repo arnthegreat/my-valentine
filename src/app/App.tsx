@@ -11,6 +11,7 @@ import { LoveCoupons } from './components/LoveCoupons';
 import { ClosingLetter } from './components/ClosingLetter';
 import { GrandFinale } from './components/GrandFinale';
 import { Heart, Music, VolumeX } from 'lucide-react';
+import backgroundMusic2 from '/music/everywhereverything.mp3';
 import backgroundMusic from '/music/bestpart.mp3';
 
 type Stage = 'envelope' | 'letter' | 'question' | 'gift' | 'gallery' | 'reasons' | 'coupons' | 'closing' | 'finale';
@@ -24,6 +25,7 @@ export default function App() {
   useEffect(() => {
     // Initialize audio
     audioRef.current = new Audio(backgroundMusic);
+    audioRef.current = new Audio(backgroundMusic2);
     audioRef.current.loop = true;
     // Attempt to play immediately on load
     audioRef.current.play().then(() => {
