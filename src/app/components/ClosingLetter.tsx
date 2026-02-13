@@ -71,7 +71,7 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
             </p>
 
             <p>
-              You came into my life like a beautiful surprise, and everything changed. You taught me what it means to truly love someone—not just with passion, but with patience, understanding, and genuine care. You've shown me that love isn't just a feeling; it's a choice we make every single day, and I choose you, always.
+              You came into my life like a beautiful surprise, and everything changed. You taught me what it means to truly love someone, not just with passion, but with patience, understanding, and genuine care. You've shown me that love isn't just a feeling; it's a choice we make every single day, and I choose you, always.
             </p>
 
             <p>
@@ -79,7 +79,7 @@ export function ClosingLetter({ onContinue, girlfriendName = 'My Love' }: Closin
             </p>
 
             <p>
-              You inspire me in ways you probably don't even realize. Your strength amazes me, your kindness humbles me, and your beauty—both inside and out—leaves me breathless. The way you see the world, with such hope and wonder, reminds me to appreciate the little things and find joy in every moment.
+              You inspire me in ways you probably don't even realize. Your strength amazes me, your kindness humbles me, and your beauty both inside and out leaves me breathless. The way you see the world, with such hope and wonder, reminds me to appreciate the little things and find joy in every moment.
             </p>
 
             <p>

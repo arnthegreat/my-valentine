@@ -56,7 +56,7 @@ export function LoveLetter({ onContinue, girlfriendName = 'My Love' }: LoveLette
             </p>
 
             <p className="text-lg">
-              I fall more in love with you with each passing day. Your kindness, your warmth, your beautiful soul—everything about you amazes me. You are my best friend, my confidant, my everything.
+              I fall more in love with you with each passing day. Your kindness, your warmth, your beautiful soul, everything about you amazes me. You are my best friend, my confidant, my everything.
             </p>
 
             <p className="text-xl text-center mt-8 text-red-600 font-serif italic font-medium">
