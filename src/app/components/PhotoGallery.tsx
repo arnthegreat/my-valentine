@@ -36,7 +36,7 @@ export function PhotoGallery({ onContinue }: PhotoGalleryProps) {
       "You are my everything 💖",
       "Our first Bonchon together 🥰 (I was still a bit shy hihi) ✨",
       "Our 2nd movie together(medyo close na tayo, di nako nahiya magpapic hehe) 😊",
-      "Hinding hindi magsasawang pagsilbihan ka araw araw, hatid sundo man as long as I'm near and here with you in PH 😊",
+      "Hinding hindi magsasawang pagsilbihan, alagaan ata mahalin ka araw araw. I will forever be excited to see you everyday baby ko!😊",
       "Makulit lang ako pero love na love ko ikaw baby ko! And never ko sisirain tiwala mo at hinding hindi kita iiwan! 😘",
       "🫡🫡🫡 hehehe 😘",
       "Eyyy! Thesis DEFENDED!! 😍",
